@@ -6,7 +6,7 @@ const DropdownMenu = () => {
   return (
     <div className="relative">
       <button onClick={() => setOpen(!open)} className="focus:outline-none">
-        <img src="/Profile.png" alt="Profile Icon" className="profile-image" />
+        <img src="/profile.png" alt="Profile Icon" className="profile-image" />
       </button>
       {open && (
         <ul className="list-ul">

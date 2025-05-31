@@ -234,8 +234,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #868517; /* Tailwind's bg-blue-700 */
-  color: white;
+  background-color: #ebeada; /* Tailwind's bg-blue-700 */
+  color: rgb(23, 22, 24);
 }
 
 .profile-image {

@@ -4,7 +4,7 @@ import DropdownMenu from './DropdownMenu';
 const Navbar = ({ role }) => {
   return (
     <nav className="navbar">
-      <h1 className="dashboard-iden">Dashboard</h1>
+      <h1 className="dashboard-iden"> <b>DASHBOARD </b></h1>
       <div className="items-center">
         {role === 'admin' ? (
           <Link to="/admin" className="foradmin">Admin Panel</Link>
