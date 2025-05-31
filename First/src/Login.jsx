@@ -3,18 +3,20 @@ import InputField from './components/InputField';
 import { Link } from 'react-router-dom';
 import SocialLogin from './components/SocialLogin';
 
-const Login = () => {
+
+const Login = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/dashboard'); // Redirect to dashboard after login
+    // Validate email/password here if needed
+    onLogin(); // Update login state
+    navigate('/dashboard'); // Navigate after login
   };
 
   return (
      <div className="outsite-message">
       <div className="outsite">
-        
         <div className="form-header">
           <h2 className="form-title">Welcome Back</h2>
           <p className="form-subtitle">Access your dashboard and features</p>
