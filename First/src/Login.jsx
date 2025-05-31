@@ -12,6 +12,13 @@ const Login = () => {
   };
 
   return (
+     <div className="outsite-message">
+      <div className="outsite">
+        
+        <div className="form-header">
+          <h2 className="form-title">Welcome Back</h2>
+          <p className="form-subtitle">Access your dashboard and features</p>
+        </div>
     <div className="login-container">
       <h2 className="form-title">Login to Your Account</h2>
       <form className="login-form" onSubmit={handleLogin}>
@@ -35,6 +42,8 @@ const Login = () => {
           Don't have an account? <Link to="/signup">Signup</Link>
         </p>
       </form>
+    </div>
+    </div>
     </div>
   );
 };

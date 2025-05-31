@@ -244,4 +244,17 @@ body {
   border-radius: 9999px;
 }
 
+.form-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form-subtitle {
+  color: #4b5563; /* Tailwind's gray-600 */
+}
 

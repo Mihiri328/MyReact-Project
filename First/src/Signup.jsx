@@ -9,6 +9,13 @@ const Signup = () => {
   };
 
   return (
+    <div className="outsite-message">
+      <div className="outsite">
+       
+        <div className="form-header">
+          <h2 className="form-title">Create Your Account</h2>
+          <p className="form-subtitle">It only takes a minute to create your account</p>
+        </div>
     <div className="login-container">
       <h2 className="form-title">Create Your Account</h2>
 
@@ -27,6 +34,8 @@ const Signup = () => {
       <p className="signup-prompt">
         Already have an account? <Link to="/login" className="signup-link">Login</Link>
       </p>
+    </div>
+    </div>
     </div>
   );
 };
