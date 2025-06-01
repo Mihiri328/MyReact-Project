@@ -1,21 +1,14 @@
-import { useState } from 'react';
-
 const DropdownMenu = () => {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="relative">
-      <button onClick={() => setOpen(!open)} className="focus:outline-none">
-        <img src="/profile.png" alt="Profile Icon" className="profile-image" />
-      </button>
-      {open && (
-        <ul className="list-ul">
-          <li className="list-profile">My Profile</li>
-          <li className="list-logout">Logout</li>
-        </ul>
-      )}
+    // apply Unicode emoji for User icon
+    <div className="dropdown">
+     <button className="dropdown-btn">👤</button> 
+      <div className="dropdown-content">
+        <a href="/profile">My Profile</a>
+        <a href="/logout">Logout</a>
+      </div>
     </div>
   );
 };
 
-export default DropdownMenu;
+export default DropdownMenu; 

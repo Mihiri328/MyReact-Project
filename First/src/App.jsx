@@ -6,10 +6,11 @@ import Login from './Login';
 import Signup from './Signup';
 import AdminPage from './pages/AdminPage';
 import UserPage from './pages/UserPage';
+import Layout from './Layout';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const userRole = 'admin'; // replace with dynamic logic later
+  const userRole = 'admin'; // Replace with dynamic role check later
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -17,21 +18,46 @@ const App = () => {
 
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path="/" element={<Login onLogin={handleLogin} />} />
       <Route path="/login" element={<Login onLogin={handleLogin} />} />
       <Route path="/signup" element={<Signup onLogin={handleLogin} />} />
-      <Route
-        path="/dashboard"
-        element={
-          isLoggedIn ? (
-            <Dashboard role={userRole} />
-          ) : (
-            <Navigate to="/login" />
-          )
-        }
-      />
-      <Route path="/admin" element={<AdminPage />} />
-      <Route path="/user" element={<UserPage />} />
+
+      {/* Protected Routes with Layout */}
+      {isLoggedIn ? (
+        <>
+          <Route
+            path="/dashboard"
+            element={
+              <Layout role={userRole}>
+                <Dashboard role={userRole} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <Layout role={userRole}>
+                <AdminPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/user"
+            element={
+              <Layout role={userRole}>
+                <UserPage />
+              </Layout>
+            }
+          />
+        </>
+      ) : (
+        <>
+          <Route path="/dashboard" element={<Navigate to="/login" />} />
+          <Route path="/admin" element={<Navigate to="/login" />} />
+          <Route path="/user" element={<Navigate to="/login" />} />
+        </>
+      )}
     </Routes>
   );
 };
