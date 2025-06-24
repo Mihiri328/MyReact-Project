@@ -341,3 +341,59 @@ body {
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
+
+
+
+.about-image {
+  width: 800px;      
+  max-width: 100%;   
+  height: auto;     
+  display: block;   
+  margin: 0 auto;   
+ 
+}
+
+
+.settings-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.settings-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #d15a5a;
+  border-radius: 8px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.settings-item:hover {
+  background-color: #bde660;
+}
+
+.settings-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-arrow {
+  font-size: 20px;
+  color: rgb(10, 6, 221);
+}
