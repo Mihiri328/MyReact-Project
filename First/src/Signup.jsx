@@ -6,11 +6,31 @@ import { Link } from 'react-router-dom';
 const Signup = ({ onLogin }) => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Normally you'd handle signup API here
-    onLogin();              // Set login state
-    navigate('/dashboard'); // Redirect to dashboard
+
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    try {
+      const res = await fetch('http://localhost:5000/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (res.ok) {
+        onLogin();
+        navigate('/dashboard');
+      } else {
+        const err = await res.json();
+        alert(err.message);
+      }
+    } catch (err) {
+      console.error('Signup error:', err);
+      alert('Signup failed. Please try again.');
+    }
   };
 
   return (
